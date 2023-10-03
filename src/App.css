@@ -5,10 +5,10 @@
     --white-2: hsl(0, 0%, 80%);
     --dark: hsl(var(--hue), 25%, 10%);
     --grey: hsl(0, 0%, 50%);
-    width: 800px;
-    height: 500px;
+    width: 1200px;
+    height: 700px;
     margin: 40px;
-
+    overflow: hidden;
     perspective: 1000px;
 }
 
@@ -25,7 +25,7 @@
 /* hover and focus-within states */
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
-    transform: rotateY(180deg);
+    transform: rotate(45deg);
 }
 
 /* .card-... */
@@ -90,10 +90,25 @@ img {
     border-right-color: var(--primary);
 }
 
+@media screen and (max-width: 1280px) {
+    .flip-card-container {
+        width: 800px;
+        height: 500px;
+    }
+}
 @media screen and (max-width: 800px) {
     .flip-card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0px 20px;
-        width: calc(100% - 40px);
-        aspect-ratio: 1;
+        width: calc(100vw - 40px);
+        height: 80vh;
+    }
+}
+@media screen and (max-width: 414px) {
+    .flip-card-container {
+        width: calc(100vw - 40px);
+        height: 75vh;
     }
 }
