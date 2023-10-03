@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+    const [flip, setFlip] = useState(false);
+
+    const handleFlip = () => {
+        setFlip(!flip);
+    };
+
     return (
-        <main class="flip-card-container">
-            <div class="flip-card">
+        <main class="flip-card-container " onClick={handleFlip}>
+            <div class={`flip-card ${flip && 'flipped'}`}>
                 <div class="card-front">
                     <figure>
                         <picture>
