@@ -20,7 +20,7 @@
     position: relative;
     transform-style: preserve-3d;
     transform: rotate3d(1, -1, 0, 0);
-    transition: 0.4s 0.1s;
+    transition: all 0.8s ease-in;
 }
 
 /* hover and focus-within states */
@@ -58,8 +58,7 @@
 
 /* .card-back */
 .card-back {
-    /* transform: rotateY(180deg); */
-    transform: inherit;
+    transform: rotateY(180deg) rotateZ(-90deg);
     z-index: 1;
 }
 
