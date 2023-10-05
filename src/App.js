@@ -35,9 +35,9 @@ function App() {
                             <picture>
                                 <source
                                     media="(max-width: 800px)"
-                                    srcset="/images/front-mobile.jpg"
+                                    srcset="/images/front-mobile.png"
                                 />
-                                <img src="/images/front.jpg" alt="" />
+                                <img src="/images/front.png" alt="" />
                             </picture>
                         </figure>
                     </div>
@@ -46,7 +46,7 @@ function App() {
                             <picture>
                                 <source
                                     media="(max-width: 800px)"
-                                    srcset="/images/back-mobile.jpg"
+                                    srcset="/images/back-mobile.png"
                                 />
                                 <img src="/images/back.png" alt="" />
                             </picture>
