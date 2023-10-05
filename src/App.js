@@ -1,32 +1,42 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
 import { BsFillVolumeUpFill, BsFillVolumeMuteFill } from 'react-icons/bs';
 import Modal from './components/Modal';
 
 function App() {
     const [flip, setFlip] = useState(false);
-    // const [play, setPlay] = useState(true);
+    const [audioPlay, setAudioPlay] = useState(true);
+    const [audio, setAudio] = useState(new Audio('/audio/sound.mp3'));
     const [display, setDisplay] = useState(true);
 
     const handleFlip = () => {
         setFlip(!flip);
     };
 
-    let audio = new Audio('/audio/sound.mp3');
     const handleDisplay = () => {
         audio.play();
+        setAudioPlay(true);
         setDisplay(false);
+    };
+
+    const handleToggleVolume = () => {
+        if (audioPlay) {
+            audio.pause();
+        } else {
+            audio.play();
+        }
+        setAudioPlay(!audioPlay);
     };
     return (
         <>
             <Modal display={display} handleDisplay={handleDisplay} />
-            {/* <div className="volume">
-                {play ? (
-                    <BsFillVolumeUpFill onClick={(audio.muted = true)} />
+            <div className="volume">
+                {audioPlay ? (
+                    <BsFillVolumeUpFill onClick={handleToggleVolume} />
                 ) : (
-                    <BsFillVolumeMuteFill onClick={(audio.muted = false)} />
+                    <BsFillVolumeMuteFill onClick={handleToggleVolume} />
                 )}
-            </div> */}
+            </div>
 
             <main className="flip-card-container " onClick={handleFlip}>
                 <div className={`flip-card ${flip && 'flipped'}`}>
@@ -35,9 +45,9 @@ function App() {
                             <picture>
                                 <source
                                     media="(max-width: 800px)"
-                                    srcset="/images/front-mobile.png"
+                                    srcSet="/images/front-mobile.jpg"
                                 />
-                                <img src="/images/front.png" alt="" />
+                                <img src="/images/front.jpg" alt="" />
                             </picture>
                         </figure>
                     </div>
@@ -46,7 +56,7 @@ function App() {
                             <picture>
                                 <source
                                     media="(max-width: 800px)"
-                                    srcset="/images/back-mobile.png"
+                                    srcSet="/images/back-mobile.png"
                                 />
                                 <img src="/images/back.png" alt="" />
                             </picture>
