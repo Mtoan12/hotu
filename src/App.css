@@ -132,4 +132,19 @@ img:hover {
     right: 100px;
     font-size: 50px;
     cursor: pointer;
+    opacity: 0.5;
+}
+
+.volume:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .volume {
+        top: 30px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        opacity: 0.6;
+    }
 }

@@ -30,11 +30,11 @@ function App() {
     return (
         <>
             <Modal display={display} handleDisplay={handleDisplay} />
-            <div className="volume">
+            <div>
                 {audioPlay ? (
-                    <BsFillVolumeUpFill onClick={handleToggleVolume} />
+                    <BsFillVolumeUpFill className="volume" onClick={handleToggleVolume} />
                 ) : (
-                    <BsFillVolumeMuteFill onClick={handleToggleVolume} />
+                    <BsFillVolumeMuteFill className="volume" onClick={handleToggleVolume} />
                 )}
             </div>
 
