@@ -1,12 +1,12 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from 'react-icons/bs';
 import './App.css';
-import { BsFillVolumeUpFill, BsFillVolumeMuteFill } from 'react-icons/bs';
 import Modal from './components/Modal';
 
 function App() {
     const [flip, setFlip] = useState(false);
     const [audioPlay, setAudioPlay] = useState(true);
-    const [audio, setAudio] = useState(new Audio('/audio/sound.mp3'));
+    const [audio] = useState(new Audio('/audio/sound.mp3'));
     const [display, setDisplay] = useState(true);
 
     const handleFlip = () => {
@@ -14,6 +14,7 @@ function App() {
     };
 
     const handleDisplay = () => {
+        audio.volume = 0.5;
         audio.play();
         setAudioPlay(true);
         setDisplay(false);
@@ -45,9 +46,9 @@ function App() {
                             <picture>
                                 <source
                                     media="(max-width: 800px)"
-                                    srcSet="/images/front-mobile.jpg"
+                                    srcSet="/images/front-mobile.png"
                                 />
-                                <img src="/images/front.jpg" alt="" />
+                                <img src="/images/front.png" alt="" />
                             </picture>
                         </figure>
                     </div>

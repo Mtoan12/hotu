@@ -10,8 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    background: url('./assets/background2.png');
-    /* background-size: contain;
+    background: url('./assets/background.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; */
+    background-position: center;
 }
