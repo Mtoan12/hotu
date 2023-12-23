@@ -60,3 +60,9 @@
 .modal__button:hover {
     box-shadow: none;
 }
+
+@media (max-width: 768px) {
+    .modal__main {
+        width: 100%;
+    }
+}

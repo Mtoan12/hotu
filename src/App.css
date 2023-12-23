@@ -1,4 +1,8 @@
 .flip-card-container {
+    position: fixed;
+    top: 45%;
+    left: 48%;
+    transform: translate(-50%, -50%);
     --hue: 150;
     --primary: hsl(var(--hue), 50%, 50%);
     --white-1: hsl(0, 0%, 90%);
@@ -15,10 +19,10 @@
 
 /* .flip-card */
 .flip-card {
-    width: inherit;
+    width: 100%;
     height: inherit;
 
-    position: relative;
+    position: absolute;
     transform-style: preserve-3d;
     transform: rotate3d(1, -1, 0, 0);
     transition: all 0.8s linear;
@@ -32,6 +36,14 @@
 .flipped {
     transform: rotate3d(1, -1, 0, 180deg);
 }
+
+/* .false > .card-back {
+    display: none;
+}
+
+.flipped > .card-front {
+    display: none;
+} */
 
 /* .card-... */
 .card-front,
@@ -110,18 +122,14 @@ img:hover {
 } */
 @media screen and (max-width: 800px) {
     .flip-card-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        left: 42%;
         padding: 0px 20px;
-        width: calc(100vw - 40px);
-        height: 80vh;
         object-fit: contain;
     }
 }
 @media screen and (max-width: 414px) {
     .flip-card-container {
-        width: calc(100vw - 40px);
+        left: 35%;
         height: 75vh;
     }
 }
